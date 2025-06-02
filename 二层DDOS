@@ -1,0 +1,17 @@
+import socket
+
+from whois import whois
+from scapy.all import *
+from random import random
+import time
+def main():
+   while 1:
+   packet = Ether(src=RandMAC(),dst=RandMAC))
+   time.sleep(0.5)
+   sendp(packet)
+  print(packet.summary())
+
+pass
+
+if __name__=='__main__':
+    main()
