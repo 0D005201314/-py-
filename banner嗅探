@@ -1,0 +1,19 @@
+import socket
+
+from whois import whois
+from scapy.all import *
+from random import random
+def main():
+    ip= '目标ip'
+   port =80
+   
+s=socket.socket()
+    s.connect((ip,port))
+    s.send('haha'.encode())
+    banner=s.recv(1024)
+    s.close()
+    print("banner is {}".format(banner))
+pass
+
+if __name__=='__main__':
+    main()
